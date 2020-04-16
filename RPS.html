@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+
+let playerSelection = prompt ('Choose Rock, Paper, or Scissor!');
+let computerSelection = computerChoice();
+
+function computerChoice(){
+	// Chooses a random string from the array "choices", and returns it
+	let choices = ['rock', 'paper', 'scissor'];	
+	let getRandom = choices[Math.floor(Math.random()*choices.length)];
+	return getRandom;		
+}
+
+
+function playRound(){
+	//Evaluate choices from Player and CPU
+	if (playerSelection == 'rock' && computerSelection == 'rock'){
+		alert ('Both chose rock. Tie!');
+	} else if (playerSelection == 'rock' && computerSelection == 'scissor'){
+		alert ('Rock beats scissor. You win!');
+	}else if (playerSelection == 'rock' && computerSelection == 'paper'){
+		alert ('Paper beats rock. You lose!');
+	}else if (playerSelection == 'scissor' && computerSelection == 'rock'){
+		alert ('Rock beats scissor. You lose!');
+	}else if (playerSelection == 'scissor' && computerSelection == 'scissor'){
+		alert ('Both chose scissor. Tie!');
+	}else if (playerSelection == 'scissor' && computerSelection == 'paper'){
+		alert ('Scissor beats paper. You win!');
+	}else if (playerSelection == 'paper' && computerSelection == 'rock'){
+		alert ('Paper beats rock. You win!');
+	}else if (playerSelection == 'paper' && computerSelection == 'scissor'){
+		alert ('Scissor beats paper. You lose!');
+	}else if (playerSelection == 'paper' && computerSelection == 'paper'){
+		alert ('Both chose paper. Tie!');
+	}
+}
+
+computerChoice();
+playRound();
+
+//Check to see if variables are stored correctly.
+console.log(playerSelection);
+console.log(computerSelection);
+</script>
+</html>
